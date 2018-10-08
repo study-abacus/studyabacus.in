@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	#welcome{
+		background-color: black;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		display: block;
+		z-index: 50;
+		opacity: 0.8;
+
+
+	}
+	.con{
+		position: absolute;
+		left: 3%;
+		top: 17%;
+		z-index: 51;
+		margin-right: 100;
+		
+	}
+	#close {
+	  height:30px;
+	  width:30px;
+	  background:url('images/close.png') no-repeat;
+	  position:absolute;
+	  top:2px;
+	  right:2px;
+	  cursor:pointer;
+	  z-index: 52;
+	  cursor: pointer;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type='text/javascript'>//<![CDATA[ 
+	$(document).ready(function(){ 
+		$('#close').click(function() {
+	  		$('#welcome').hide(100); // Can also be added to this jQuery selector but the animation was odd
+	    	$('.con').hide(100); // Fades out on click
+		});
+	});
+
+	
+</script>
+
+</head>
+<body>
+	<div id="welcome">
+</div>
+<div class="con">
+	<span id="close"></span>
+	<center><img src="images/popup.jpg" width="60%" height="50%"></center>
+</div>
+</body>
+
+</html>

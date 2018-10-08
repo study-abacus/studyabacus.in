@@ -1,0 +1,27 @@
+#countdown {
+	margin: 10px auto;
+	padding: 0;
+}
+#countdown li{
+	background-color: #333;
+	border: 2px solid #fff;
+	color: #fff;
+	display: inline-block;
+	
+	font: normal bold 36px Arial;
+	letter-spacing: 5px;
+	margin-left: 5px;
+	text-align: center;
+	width: 60px;
+	border-radius: 6px;
+	box-shadow: 0 0 3px #777;
+}
+#countdown  {
+	padding-left: 5px;
+}
+#countdown  .timeRefDays, #countdown  .timeRefHours, #countdown  .timeRefMinutes, #countdown  .timeRefSeconds{
+	font: normal normal 12px Arial;
+	letter-spacing: 0;
+	margin: 0;
+	padding-bottom: 5px;
+}
