@@ -2,14 +2,23 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    		<link rel="icon" type="image/x-icon" href="images/favicon.png" />
-    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-			<link rel="stylesheet" href="css/jquery.modal.min.css" type="text/css" media="screen" />
-	    <title>Abacus Classes | Vedic Maths | Study Abacus | Teacher Training | Start-Up</title>
-<?php 
-include_once('include_upper.html');
-?>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon"/>
+	
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		$(function(){
+			$("#header").load("header.html")
+			$("#footer").load("footer.html")
+			$("#upper").load("include_upper.html")
+			$("#bottom").load("include_bottom.html")
+		})
+	</script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/jquery.modal.min.css" type="text/css" media="screen" />
+	<title>Abacus Classes | Vedic Maths | Study Abacus | Teacher Training | Start-Up</title>
+	<div id="upper"></div>
 </head>
 
 
@@ -93,9 +102,7 @@ include_once('include_upper.html');
 						
 			<div class="top_panel_fixed_wrap"></div>
 
-				<?php
-                include_once("header.html");
-                ?>
+				<div id="header"></div>
 
 		<section class="slider_wrap slider_fullwide slider_engine_revo slider_alias_education_home_slider_2">
 
@@ -587,13 +594,13 @@ Speed Champion (Abacus) : Komal Mittal (LAPTOP WINNER) ****** Speed Champion (Ve
 	</div> <!-- /div class="content_wrap" -->			
 			</div>		<!-- /.page_content_wrap -->
 			
-<?php include_once("footer.html"); ?>
+<div id="footer"></div>
 
 						
 		</div>	<!-- /.page_wrap -->
 
 	</div>		<!-- /.body_wrap -->
-    <?php include_once('include_bottom.html');  ?>
+    <div id="bottom"></div>
 <a href="#" class="scroll_to_top icon-up-2" title="Scroll to top"></a>
 
 <div class="custom_html_section">
