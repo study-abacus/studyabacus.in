@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Abacus Basic",
+        "slug": "abacus-basic",
+        "template_name": "abasic.html"
+    },
+    {
+        "name": "Abacus Advance",
+        "slug": "abacus-advance",
+        "template_name": "aadvance.html"
+    },
+    {
+        "name": "Vedic Maths",
+        "slug": "vedic-maths",
+        "template_name": "vmaths.html"
+    }
+]

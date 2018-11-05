@@ -1,0 +1,101 @@
+<div class="header-top">
+    <div class="container clearfix">
+        <!--Top Left-->
+        <div class="top-left pull-left">
+            <ul class="links-nav clearfix">
+                <li><a href="#"><span class="fa fa-phone"></span> Call: 9891400628</a>
+                </li>
+                <li><a href="#"><span class="fa fa-envelope"></span>Email: info@studyabacus.com</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Top Right-->
+        <div class="top-right pull-right">
+            <ul class="social-links clearfix">
+                <li><a href="https://www.facebook.com/studyabacus"><span class="fa fa-facebook-f top-icon"></span></a>
+                </li>
+                <li><a href="https://twitter.com/studyabacus"><span class="fa fa-twitter top-icon"></span></a>
+                </li>
+                
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+<!-- Header Top End -->
+
+<section class="mainmenu-area stricky">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="main-logo">
+                    <a href="{{ url_for('index') }}"><img src="/images/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-7 menu-column text-right">
+                <nav class="main-menu">
+                    <div class="navbar-header">     
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse clearfix">
+                        <ul class="navigation clearfix">
+
+                            <li><a href="{{ url_for('index') }}">Home</a>
+                            </li>
+                            <li class="dropdown"><a href="#">Programmes</a>
+                                <ul>
+                                    {% for course in courses %}
+                                        <li><a href="{{ url_for('course', slug=course['slug']) }}">{{ course['name'] }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li><a href="{{ url_for('centres') }}">Centers</a>                                  
+                            </li>
+                            <li><a href="{{ url_for('career') }}">Careers</a>                                      
+                            </li>
+
+                            <li><a href="{{ url_for('faq') }}">FAQ</a>
+                                
+                            </li>
+                            <li><a href="{{ url_for('contact') }}">Contact</a>
+                            </li>
+                        </ul>
+
+                        <ul class="mobile-menu clearfix">
+
+                            <li class="current text-left"><a href="{{ url_for('index') }}">Home</a>
+                            </li>
+                            <li class="dropdown text-left"><a href="#">Programmes</a>
+                                <ul>
+                                    {% for course in courses %}
+                                        <li><a href="{{ url_for('course', slug=course['slug']) }}">{{ course['name'] }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="text-left"><a href="{{ url_for('centres') }}">Centers</a>                                  
+                            </li>
+                            <li class="text-left"><a href="{{ url_for('career') }}">Careers</a>                                      
+                            </li>
+
+                            <li class="text-left"><a href="{{ url_for('faq') }}">FAQ</a>
+                                
+                            </li>
+                            <li class="text-left"><a href="{{ url_for('contact') }}">Contact</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
