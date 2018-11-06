@@ -1,14 +1,15 @@
+from decouple import config
+import json
+import requests
 from flask import (
         Flask,
         render_template,
         send_from_directory,
         abort
 )
-from decouple import config
-import json
 
 app = Flask(__name__, static_url_path='')
-COURSES = json.load(open('courses.json'))
+COURSES = json.load(open('data/courses.json'))
 
 
 @app.context_processor
@@ -26,7 +27,15 @@ def course(slug):
 
 @app.route('/centres')
 def centres():
-    return render_template('centers.html')
+    url = "http://admin.studyabacus.in/api/centres/"
+    headers = {
+        "Authorization": "Token aecb8f49082758f41885dc00a37db0b6afd57162"
+    }
+    response = requests.get(url, headers = headers)
+    centre_list = []
+    if response.status_code == 200:
+        centre_list = json.loads(response.content)
+    return render_template('centers.html', centres = centre_list)
 
 @app.route('/career')
 def career():
