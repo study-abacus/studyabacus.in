@@ -1,0 +1,17 @@
+{
+  "addons": [
+
+  ],
+  "description": "Study Abacus main website",
+  "env": {
+    "DEBUG": "False"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "studyabacus.in",
+  "scripts": {
+  }
+}
