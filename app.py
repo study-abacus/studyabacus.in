@@ -27,7 +27,7 @@ def course(slug):
 
 @app.route('/centres')
 def centres():
-    url = "http://admin.studyabacus.in/api/centres/"
+    url = "https://admin.studyabacus.com/api/centres/"
     headers = {
         "Authorization": "Token aecb8f49082758f41885dc00a37db0b6afd57162"
     }
