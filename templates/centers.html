@@ -44,34 +44,34 @@
                     </div>
 
                     <div class="row" style = "margin-top: 3em">
+                        {% for centre in centres %}
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <div class="panel-group">
-                                {% for centre in centres %}
-                                    <div class="panel panel-default">
-                                    <div class="panel-heading center_area">{{ centre['name'] }}</div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                                <b>Contact Person:</b>
-                                            </div>
-                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                                {{ centre['ci']['user']['first_name'] }} {{ centre['ci']['user']['last_name'] }}
-                                            </div>
+                                <div class="panel panel-default">
+                                <div class="panel-heading center_area">{{ centre['name'] }}</div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <b>Contact Person:</b>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                                <b>Address:</b>
-                                            </div>
-                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                                    {{ centre['address'] }}
-                                            </div>
-                                                                    
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            {{ centre['ci']['user']['first_name'] }} {{ centre['ci']['user']['last_name'] }}
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <b>Address:</b>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                {{ centre['address'] }}
+                                        </div>
+                                                                
                                     </div>
-                                {% endfor %}
+                                </div>
+                                </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
