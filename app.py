@@ -56,6 +56,6 @@ def index():
 
 if __name__ == "__main__":
     app.run(
-        port = config('PORT', default=8000, cast=int),
+        port = config('PORT', default=8080, cast=int),
         debug = config('DEBUG', default=True, cast=bool)
     )
