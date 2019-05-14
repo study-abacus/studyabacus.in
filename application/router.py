@@ -1,4 +1,3 @@
-import requests
 import json
 from application import util
 from decouple import config
@@ -8,7 +7,6 @@ from flask import (
         abort
 )
 
-API_KEY = config('API_KEY', default='')
 COURSES = json.load(open('data/courses.json'))
 
 class Router:
@@ -64,11 +62,7 @@ class Router:
 
     @staticmethod
     def centres():
-        url = "https://admin.studyabacus.com/api/centres/"
-        headers = {
-            "Authorization": "Token {}".format(API_KEY)
-        }
-        response = requests.get(url, headers = headers)
+        response = util.api("https://admin.studyabacus.com/api/centres/")
         centre_list = []
         if response.status_code == 200:
             centre_list = json.loads(response.content)
