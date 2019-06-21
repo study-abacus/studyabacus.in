@@ -2,9 +2,10 @@ import json
 from application import util
 from decouple import config
 from flask import (
-        render_template,
-        send_from_directory,
-        abort
+    request,
+    render_template,
+    send_from_directory,
+    abort
 )
 
 COURSES = json.load(open('data/courses.json'))
@@ -36,7 +37,9 @@ class Router:
             {
                 'url': '/contact',
                 'method': self.contact,
-                'kwargs': {}
+                'kwargs': {
+                    'methods': ['GET', 'POST']
+                }
             },
             {
                 'url': '/',
@@ -78,7 +81,19 @@ class Router:
 
     @staticmethod
     def contact():
-        return render_template('contact.html')
+        resp = None
+        if request.method == 'POST':
+            resp = util.api(
+                'https://admin.studyabacus.com/api/centres/',
+                params = {
+                    'name': request.form['name'],
+                    'email': request.form['email'],
+                    'phone_number': request.form['phone_number'],
+                    'message': request.form['message']
+                }
+            )
+            return json.dumps(resp)
+        return render_template('contact.html', resp = resp)
 
     @staticmethod
     def index():
