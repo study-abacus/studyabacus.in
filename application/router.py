@@ -85,15 +85,15 @@ class Router:
         resp = None
         if request.method == 'POST':
             resp = util.api(
-                'https://admin.studyabacus.com/api/centres/',
+                'https://admin.studyabacus.com/api/contact_query/',
                 params = {
                     'name': request.form['name'],
                     'email': request.form['email'],
                     'phone_number': request.form['phone_number'],
                     'message': request.form['message']
-                }
+                },
+                method = 'post'
             )
-            return json.dumps(resp)
         return render_template('contact.html', resp = resp)
 
     @staticmethod

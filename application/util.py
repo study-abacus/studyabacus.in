@@ -10,17 +10,17 @@ def api(url, params = {}, method = 'get'):
   headers = {
     "Authorization": "Token {}".format(API_KEY)
   }
-  if method == 'get':
+  if method.lower() == 'get':
     return requests.get(
       url, 
       headers = headers, 
       params = params
     )
-  elif method == 'post':
+  elif method.lower() == 'post':
     return requests.post(
       url,
       headers = headers,
-      data = params
+      json = params
     )
   else:
     raise Exception('Method not supported')
