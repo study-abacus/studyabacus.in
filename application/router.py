@@ -9,6 +9,7 @@ from flask import (
 )
 
 COURSES = json.load(open('data/courses.json'))
+REVIEWS = json.load(open('data/reviews.json'))
 
 class Router:
     def __init__(self, app):
@@ -97,6 +98,6 @@ class Router:
 
     @staticmethod
     def index():
-        return render_template('index.html')
+        return render_template('index.html', reviews = REVIEWS)
 
     
