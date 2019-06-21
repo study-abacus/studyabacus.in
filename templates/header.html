@@ -51,7 +51,8 @@
                             <li class="dropdown"><a href="#">Programmes</a>
                                 <ul>
                                     {% for course in courses %}
-                                        <li><a href="{{ url_for('course', slug=course['slug']) }}">{{ course['name'] }}</a></li>
+                                        <!-- <li><a href="{{ url_for('course', slug=course['slug']) }}">{{ course['name'] }}</a></li> -->
+                                        <li>{{ course['name'] }}</li>
                                     {% endfor %}
                                 </ul>
                             </li>
