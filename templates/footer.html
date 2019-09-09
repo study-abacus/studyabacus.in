@@ -25,17 +25,15 @@
                     <div class="footer-widget quick-links">
                         <h3 class="title">Useful Link</h3>
                         <ul>
-                            <li><a href="home.html">About us</a>
-                            </li>
                             <li><a href="#">Programms</a>
                             </li>
-                            <li><a href="centers.html">Centres</a>
+                            <li><a href="{{ url_for('centres') }}">Centres</a>
                             </li>
-                            <li><a href="careers.html">Careers</a>
+                            <li><a href="{{ url_for('career') }}">Careers</a>
                             </li>
-                            <li><a href="faq.html">FAQ</a>
+                            <li><a href="{{ url_for('faq') }}">FAQ</a>
                             </li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
