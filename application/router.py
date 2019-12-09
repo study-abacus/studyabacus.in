@@ -69,7 +69,7 @@ class Router:
         response = util.api("https://admin.studyabacus.com/api/centres/")
         centre_list = []
         if response.status_code == 200:
-            centre_list = json.loads(response.content)
+            centre_list = json.loads(response.content.decode('utf-8'))
         return render_template('centers.html', centres = centre_list)
 
     @staticmethod
