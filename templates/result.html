@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="boxed_wrapper">
+        {% include 'header.html' %}
+
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-md-6 col-sm-6 col-xs-12 pull-left">
+                        <h1>Result</h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right text-right path"><a href="index-2.html">Home</a>&ensp;>&ensp;<a href="#">Result</a>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+            </div>
+        </section>
+        <!--Page Title Ends-->
+        
+        <!--Result Section Start -->
+        <section class="course-single">
+            <div class="container">
+                <form method="post" class="outer-box">
+                    <input type="hidden" name="csrf_token" value="{{csrf_token()}}" />
+                    <div class="content-box">
+                        <h1 class="text-center"> Abacus Olympiad 2019-20 <br> Championship Result </h1>
+                    </div>
+                    <div class="row text">
+                        <div class="input-group style-two col-sm-12 col-md-6 col-md-offset-3">
+                            <input name="roll_number" type="number" class="form-control" placeholder="Roll Number" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">
+                                    Submit
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    {% if result %}
+                    <div class="row text" style="margin-top: 30px">
+                        <div class="col-sm-12 col-md-6 col-md-offset-3">
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th> Name: </th>
+                                        <td> {{result['student_name']}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> School/CI Name: </th>
+                                        <td> {{result['ci_name']}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Class: </th>
+                                        <td> {{result['class']}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Marks(%): </th>
+                                        <td> {{result['exams'][0]['marks']}}% </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    {% endif %}
+                </form>
+            </div>
+        </section>
+        <!--Result Section Start -->
+
+        {% include 'footer.html' %}
+    </div>
+{% endblock %}

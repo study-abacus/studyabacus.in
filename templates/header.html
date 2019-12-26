@@ -28,13 +28,13 @@
 <section class="mainmenu-area stricky">
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <div class="main-logo">
                     <a href="{{ url_for('index') }}"><img src="/images/logo.png" alt=""></a>
                     <p> AN ISO 9001:2015 CERTIFIED INSTITUTION </p>
                 </div>
             </div>
-            <div class="col-md-7 menu-column text-right">
+            <div class="col-md-8 menu-column text-right">
                 <nav class="main-menu">
                     <div class="navbar-header">     
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -52,8 +52,7 @@
                             <li class="dropdown"><a href="#">Programmes</a>
                                 <ul>
                                     {% for course in courses %}
-                                        <!-- <li><a href="{{ url_for('course', slug=course['slug']) }}">{{ course['name'] }}</a></li> -->
-                                        <li><a href="#">{{ course['name'] }}</a></li>
+                                        <li><a href="{{ url_for('course', slug=course['slug']) }}">{{ course['name'] }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>
@@ -65,6 +64,8 @@
                             <li><a href="{{ url_for('faq') }}">FAQ</a>   
                             </li>
                             <li><a href="{{ url_for('contact') }}">Contact Us</a>
+                            </li>
+                            <li><a href="{{ url_for('result') }}">Result</a>
                             </li>
                             <li><a href="https://admin.studyabacus.com" target="_blank">Login</a>
                             </li>
@@ -88,6 +89,8 @@
                             <li class="text-left"><a href="{{ url_for('faq') }}">FAQ</a>
                             </li>
                             <li class="text-left"><a href="{{ url_for('contact') }}">Contact Us</a>
+                            </li>
+                            <li class="text-left"><a href="{{ url_for('result') }}">Result</a>
                             </li>
                             <li class="text-left"><a href="https://admin.studyabacus.com" target="_blank">Login</a>
                             </li>
