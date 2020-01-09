@@ -37,14 +37,17 @@
                             </span>
                         </div>
                     </div>
-                    {% if result %}
+                    {% if result and result['exams'] %}
                     <div class="row text" style="margin-top: 30px">
-                        <div class="col-sm-12 col-md-6 col-md-offset-3">
+                        <div class="col-12">
+                            <h1 class="red gradient-text-pink" style="text-align: center; line-height: 50px;">Congratulations !</h1>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-md-offset-3" style="margin-top: 30px;">
                             <table class="table table-bordered table-striped">
                                 <tbody>
                                     <tr>
                                         <th> Name: </th>
-                                        <td> {{result['student_name']}} </td>
+                                        <td> {{result['student_name'].upper()}} </td>
                                     </tr>
                                     <tr>
                                         <th> School/CI Name: </th>
@@ -56,11 +59,17 @@
                                     </tr>
                                     <tr>
                                         <th> Marks(%): </th>
-                                        <td> {{result['exams'][0]['marks']}}% </td>
+                                        <td> 
+                                            {{result['exams'][0]['marks']}}% 
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    {% elif result %}
+                    <div class="row text" style="margin-top: 30px">
+                        <h3 style="text-align: center;">Result not found !</h3>
                     </div>
                     {% endif %}
                 </form>

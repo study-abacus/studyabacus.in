@@ -5829,3 +5829,10 @@ input,textarea {
 	background-color: #6059bb !important;
 	color: #fff !important;
 }
+
+.gradient-text-pink {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(30deg, #f24f5f, #a3076c);
+}
