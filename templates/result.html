@@ -27,7 +27,8 @@
                     <div class="content-box">
                         <h1 class="text-center"> Abacus Olympiad 2019-20 <br> Championship Result </h1>
                     </div>
-                    <div class="row text">
+                    <div id="timer" class="text-center" style="font-size: 5rem"></div>
+                    <div class="row text" id="content" style="display: none;">
                         <div class="input-group style-two col-sm-12 col-md-6 col-md-offset-3">
                             <input name="roll_number" type="number" class="form-control" placeholder="Roll Number" />
                             <span class="input-group-btn">
@@ -79,4 +80,40 @@
 
         {% include 'footer.html' %}
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $( document ).ready(function() {    
+            // Set the date we're counting down to
+            var countDownDate = new Date("Feb 9, 2020 18:00:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+                    
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                    
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                // Output the result in an element with id="demo"
+                document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+                    
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("content").style.display = "block";
+                }
+            }, 1000);
+        });
+
+    </script>
 {% endblock %}
