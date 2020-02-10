@@ -1,7 +1,7 @@
 import json
 from application import util
 from decouple import config
-from application.services import championship_school
+from application.services import championship
 from flask import (
     request,
     render_template,
@@ -88,7 +88,7 @@ class Router:
     def result():
         result = None
         if request.method == "POST":
-            response= championship_school.service.getResult(
+            response= championship.service.getResult(
                 request.form.get('roll_number')
             )
             result = json.loads(response.content.decode('utf-8'))

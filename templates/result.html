@@ -51,19 +51,24 @@
                                         <td> {{result['student_name'].upper()}} </td>
                                     </tr>
                                     <tr>
-                                        <th> School/CI Name: </th>
+                                        <th> CI Name: </th>
                                         <td> {{result['ci_name']}} </td>
                                     </tr>
                                     <tr>
-                                        <th> Class: </th>
-                                        <td> {{result['class']}} </td>
+                                        <th> Roll Number: </th>
+                                        <td> {{result['roll_number']}} </td>
                                     </tr>
                                     <tr>
-                                        <th> Marks(%): </th>
+                                        <td colspan="2"> Result </td>
+                                    </tr>
+                                    {% for exam in result['exams'] %}
+                                    <tr>
+                                        <th> {{exam['exam']}}: </th>
                                         <td> 
-                                            {{result['exams'][0]['marks']}}% 
+                                            {{exam['marks']}}% 
                                         </td>
                                     </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
