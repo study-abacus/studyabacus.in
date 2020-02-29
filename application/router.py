@@ -21,13 +21,13 @@ class Router:
                 'method': self.course,
                 'kwargs': {}
             },
-            {
-                'url': '/result',
-                'method': self.result,
-                'kwargs': {
-                    "methods": ['GET', 'POST']    
-                }
-            },
+            # {
+            #     'url': '/result',
+            #     'method': self.result,
+            #     'kwargs': {
+            #         "methods": ['GET', 'POST']    
+            #     }
+            # },
             {
                 'url': '/centres',
                 'method': self.centres,
