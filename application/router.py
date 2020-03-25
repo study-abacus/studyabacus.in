@@ -6,6 +6,7 @@ from flask import (
     request,
     render_template,
     send_from_directory,
+    redirect,
     abort
 )
 
@@ -44,8 +45,8 @@ class Router:
                 'kwargs': {}
             },
             {
-                'url': '/yt',
-                'method': self.yt,
+                'url': '/learning_online',
+                'method': self.learning_online,
                 'kwargs': {}
             },
             {
@@ -104,7 +105,7 @@ class Router:
         return render_template('faq.html')
 
     @staticmethod
-    def yt():
+    def learning_online():
         return redirect('https://www.youtube.com/channel/UCX4efrIZvf7grkx4pCEW3dQ', code = 301)
 
     @staticmethod
