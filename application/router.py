@@ -44,6 +44,11 @@ class Router:
                 'kwargs': {}
             },
             {
+                'url': '/yt',
+                'method': self.yt,
+                'kwargs': {}
+            },
+            {
                 'url': '/contact',
                 'method': self.contact,
                 'kwargs': {
@@ -97,6 +102,10 @@ class Router:
     @staticmethod
     def faq():
         return render_template('faq.html')
+
+    @staticmethod
+    def yt():
+        return redirect('https://www.youtube.com/channel/UCX4efrIZvf7grkx4pCEW3dQ', code = 301)
 
     @staticmethod
     def contact():
