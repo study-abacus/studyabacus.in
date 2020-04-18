@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="boxed_wrapper">
+        {% include 'header.html' %}
+
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-md-6 col-sm-6 col-xs-12 pull-left">
+                        <h1>Result</h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right text-right path"><a href="index-2.html">Home</a>&ensp;>&ensp;<a href="#">Result</a>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+            </div>
+        </section>
+        <!--Page Title Ends-->
+        
+        <!--Result Section Start -->
+        <section class="course-single">
+            <div class="container">
+                <div class="row">
+                    <div class="column col-md-6 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <h3 class="text-center"><b>Pay at Branch of any bank</b></h3> 
+                            <div class="row" style="margin-top: 20px;">
+                                <div class="col-xs-6">
+                                    <b>Bank: </b>ICICI Bank <br>
+                                    <b>Branch: </b>Sec-3 Rohini Delhi<br>
+                                    <b>A/c: </b>425405000079 <br>
+                                    <b>IFSC: </b> ICIC 0004254 <br>
+                                    <b>Name: </b>Brain 'o' Mind Tutorial <br>
+                                    <b>GSTIN: </b>07ALCPK8203G2ZC
+                                </div>
+                                <div class="col-xs-6">
+                                    <img src="https://logos-download.com/wp-content/uploads/2016/10/icici_bank_logo_symbol.png" alt="">
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="column col-md-6 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <h3 class="text-center"><b>Online Payment</b></h3> 
+                            <div style="margin-top: 20px;">
+                                <b>Google Pay</b>: 9811062380
+                                <br>
+                                <b>Paytm</b>: 9811062380
+                                <br>
+                                <b>UPI/BHIM</b>: 9811062380@icici
+                                <div class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_EfzLUaLBPoMRUd/view" data-text="Pay Now" data-color="#528FF0" data-size="large">
+                                    <script>
+                                      (function(){
+                                        var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+                                        if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+                                        s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+                                        rzp && rzp.init && rzp.init()}})();
+                                    </script>
+                                </div>                                  
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Result Section Start -->
+
+        {% include 'footer.html' %}
+    </div>
+{% endblock %}

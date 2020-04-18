@@ -54,14 +54,16 @@
                                     {% for course in courses %}
                                         <li><a href="{{ url_for('course', slug=course['slug']) }}">{{ course['name'] }}</a></li>
                                     {% endfor %}
+                                    <li><a href="{{ url_for('faq') }}">FAQ</a>   
+                                    </li>
                                 </ul>
                             </li>
                             <li><a href="{{ url_for('centres') }}">Centres</a>                                  
                             </li>
                             <li><a href="{{ url_for('career') }}">Careers</a>                                      
                             </li>
-
-                            <li><a href="{{ url_for('faq') }}">FAQ</a>   
+                            <li>
+                                <a href="{{ url_for('pay_online') }}">Pay Online</a>
                             </li>
                             <li>
                                 <a 
@@ -85,13 +87,16 @@
                                     {% for course in courses %}
                                         <li><a href="#">{{ course['name'] }}</a></li>
                                     {% endfor %}
+                                    <li><a href="{{ url_for('faq') }}">FAQ</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="text-left"><a href="{{ url_for('centres') }}">Centres</a>                                  
                             </li>
                             <li class="text-left"><a href="{{ url_for('career') }}">Careers</a>                                      
                             </li>
-                            <li class="text-left"><a href="{{ url_for('faq') }}">FAQ</a>
+                            <li class="text-left">
+                                <a href="{{ url_for('pay_online') }}">Pay Online</a>
                             </li>
                             <li class="text-left">
                                 <a 

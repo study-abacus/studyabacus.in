@@ -22,13 +22,6 @@ class Router:
                 'method': self.course,
                 'kwargs': {}
             },
-            # {
-            #     'url': '/result',
-            #     'method': self.result,
-            #     'kwargs': {
-            #         "methods": ['GET', 'POST']    
-            #     }
-            # },
             {
                 'url': '/centres',
                 'method': self.centres,
@@ -47,6 +40,11 @@ class Router:
             {
                 'url': '/learning_online',
                 'method': self.learning_online,
+                'kwargs': {}
+            },
+            {
+                'url': '/payonline',
+                'method': self.pay_online,
                 'kwargs': {}
             },
             {
@@ -91,22 +89,16 @@ class Router:
         return render_template('careers.html')
 
     @staticmethod
-    def result():
-        result = None
-        if request.method == "POST":
-            response= championship.service.getResult(
-                request.form.get('roll_number')
-            )
-            result = json.loads(response.content.decode('utf-8'))
-        return render_template('result.html', result=result)
-
-    @staticmethod
     def faq():
         return render_template('faq.html')
 
     @staticmethod
     def learning_online():
         return redirect('https://www.youtube.com/channel/UCX4efrIZvf7grkx4pCEW3dQ', code = 301)
+    
+    @staticmethod
+    def pay_online():
+        return render_template('payonline.html')
 
     @staticmethod
     def contact():
