@@ -38,7 +38,7 @@ class Router:
                 'kwargs': {}
             },
             {
-                'url': '/exam',
+                'url': '/exam/<slug>',
                 'method': self.exam,
                 'kwargs': {}
             },
@@ -83,7 +83,7 @@ class Router:
 
     @staticmethod
     def centres():
-        response = util.api("https://admin.studyabacus.com/api/centres/")
+        response = util.api("/api/centres/")
         centre_list = []
         if response.status_code == 200:
             centre_list = json.loads(response.content.decode('utf-8'))
@@ -98,8 +98,10 @@ class Router:
         return render_template('faq.html')
 
     @staticmethod
-    def exam():
-        return render_template('exam.html')
+    def exam(slug):
+        response = util.api(f'/api/exams/{slug}')
+        exam = json.loads(response.content.decode('utf-8'))
+        return render_template('exam.html', exam = exam)
 
     @staticmethod
     def learning_online():
@@ -114,7 +116,7 @@ class Router:
         resp = None
         if request.method == 'POST':
             resp = util.api(
-                'https://admin.studyabacus.com/api/contact_query/',
+                '/api/contact_query/',
                 params = {
                     'name': request.form['name'],
                     'email': request.form['email'],

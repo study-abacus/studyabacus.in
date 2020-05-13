@@ -7,6 +7,9 @@ def get_route_string(s):
 
 def api(url, params = {}, method = 'get'):
   API_KEY = config('API_KEY', default='')
+  BASE_URL = 'https://admin.studyabacus.com'
+  url = BASE_URL + url
+  
   headers = {
     "Authorization": "Token {}".format(API_KEY)
   }
