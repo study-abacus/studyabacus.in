@@ -99,7 +99,7 @@ class Router:
 
     @staticmethod
     def exam(slug):
-        response = util.api(f'/api/exams/{slug}')
+        response = util.api('/api/exams/{}'.format(slug))
         exam = json.loads(response.content.decode('utf-8'))
         return render_template('exam.html', exam = exam)
 
