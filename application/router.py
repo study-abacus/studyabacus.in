@@ -38,6 +38,11 @@ class Router:
                 'kwargs': {}
             },
             {
+                'url': '/exam',
+                'method': self.exam,
+                'kwargs': {}
+            },
+            {
                 'url': '/learning_online',
                 'method': self.learning_online,
                 'kwargs': {}
@@ -91,6 +96,10 @@ class Router:
     @staticmethod
     def faq():
         return render_template('faq.html')
+
+    @staticmethod
+    def exam():
+        return render_template('exam.html')
 
     @staticmethod
     def learning_online():

@@ -79,7 +79,7 @@ function mainmenu() {
 //===Header Sticky===
 function stickyHeader() {
     if ($('.stricky').length) {
-        var strickyScrollPos = 100;
+        var strickyScrollPos = 500;
         if ($(window).scrollTop() > strickyScrollPos) {
             $('.stricky').addClass('stricky-fixed');
             $('.scroll-to-top').fadeIn(1500);

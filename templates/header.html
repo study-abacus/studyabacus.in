@@ -28,14 +28,18 @@
 <section class="mainmenu-area stricky">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-8" style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="main-logo">
-                    <a href="{{ url_for('index') }}"><img src="/images/logo.png" alt=""></a>
-                    <p> AN ISO 9001:2015 CERTIFIED INSTITUTION </p>
+                    <a href="{{ url_for('index') }}">
+                        <img 
+                            src="/images/logo.png" 
+                            alt=""
+                            style="width: 70%;"
+                        >
+                    </a>
+                    <p style="font-size: 12px;"> AN ISO 9001:2015 CERTIFIED INSTITUTION </p>
                 </div>
-            </div>
-            <div class="col-md-8 menu-column text-right">
-                <nav class="main-menu">
+                <div class="d-md-none main-menu">
                     <div class="navbar-header">     
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
@@ -44,6 +48,10 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-8 menu-column text-right">
+                <nav class="main-menu">
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
 
