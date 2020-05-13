@@ -92,7 +92,7 @@ function stickyHeader() {
 
 function stickyHeader () {
 	if ($('.stricky').length) {
-		var strickyScrollPos = 100;
+		var strickyScrollPos = 500;
 		if($(window).scrollTop() > strickyScrollPos) {
 			$('.stricky').removeClass('fadeIn animated');
 	      	$('.stricky').addClass('stricky-fixed fadeInDown animated');
